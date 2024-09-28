@@ -1,0 +1,56 @@
+<main>
+    <section>
+        <div class="container">
+            <div class="form" (submit)="newAlert()">
+                <form>
+                    <p class="heading">Alerta</p>
+                    <div class="inputContainer">
+                        <label class="" for="alertdescription">Descripción</label>
+                        <input [(ngModel)]="description" name="description" type="text" class="input"
+                            id="alertdescription" placeholder="Descripción de la alerta">
+                    </div>
+
+                    <div class="inputContainer">
+                        <label for="selectionTypeAlert">Selecciona un Tipo de Alerta</label>
+                        <select [(ngModel)]="selectionTypeAlert" id="selectionTypeAlert" name="selectionTypeAlert"
+                            required class="input">
+                            @for (typealert of typeAlerts; track $index) {
+                            <option class="input" [value]="typealert._id">
+                                {{typealert.description}}
+                            </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="inputContainer">
+                        <label class="" for="notificationSms">Notificacion SMS</label>
+                        <label class="switch">
+                            <input [(ngModel)]="notificationSms" name="notificationSms" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="notificationEmail">Notificacion Email</label>
+                        <label class="switch">
+                            <input [(ngModel)]="notificationEmail" name="notificationEmail" type="checkbox"
+                                class="input">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="inputContainer">
+                        <label for="frecuency">Frecuencia</label>
+                        <input [(ngModel)]="frecuency" name="frecuency" type="text" class="input">
+                    </div>
+                    <!-- botones -->
+                    <div class="card_button">
+                        <p class="button">
+                            <button>Nueva</button>
+                        </p>
+                        <button class="button_secundary" (click)="cancelar()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

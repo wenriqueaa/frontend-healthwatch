@@ -1,0 +1,208 @@
+header {
+    z-index: 800;
+    width: 100%;
+    height: 9vh;
+    position: relative;
+    background-color: #B1C6EA;
+    margin: 1px 0px 0px 0px;
+    display: grid;
+    grid-template-rows: 70% 30%;
+}
+
+.header__container a {
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 6px 12px;
+    color: #F3F4F6;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Efectos de hover */
+.header__container li a:hover {
+    border: 3px solid #1E3A8A;
+    border-radius: 12px;
+}
+
+/* Efecto cuando se remueve el link */
+.header__container li a.disabled {
+    background-color: #1E3A8A;
+    border-radius: 12px;
+    border: none;
+    cursor: none;
+}
+
+.navbar {
+    /* position: sticky; */
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 2fr;
+    /* alinea en el eje horizontal */
+    justify-self: center;
+    /* alinea en el eje vertical */
+    align-self: center;
+    /* height: 40px;  //revisando */
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.navbar img:hover {
+    transition: transform 0.2s ease, color 0.2s ease;
+    transform: scale(1.2); 
+}
+
+.navbar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    /* alinea en el eje horizontal */
+    justify-self: center;
+    /* alinea en el eje vertical */
+    align-self: center;
+}
+
+/* Efectos del fonts de Home */
+.navbar i {
+    color: #10B981;
+    font-size: 35px;
+    padding: 4px;
+}
+
+/* Efectos de hover */
+.navbar i:hover {
+    color: #A7F3D0;
+    cursor: pointer;
+}
+
+.navbar button {
+    background-color: #9ACD32;
+    color: #FFF;
+    border: 1px solid #6B8E23;
+    border-radius: 12px;
+    z-index: 50;
+    width: 200px;
+    height: 30px;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: center;  
+    transition: background-color 0.3s ease;
+    background-color: linear-gradient(744deg, #6B8E23  #A7F3D0 50%, #9ACD32);
+    animation: gradient_301 60s ease infinite;
+}
+
+.navbar button a {
+    font-size: 25px;
+}
+
+.navbar button:hover {
+    background-color: #A2D56B;
+    color: #1F2937;
+    border-color: #9ACD32;
+    transition: transform 0.2s ease, color 0.2s ease;
+    transform: scale(1.1);     
+}
+
+
+
+/* Organizando el boton de busqueda */
+.headerSearch__container {
+    display: flex;
+    /* Alinea los elementos a la derecha */
+    justify-content: flex-end;
+    align-items: end;
+    margin-top: 20px;
+}
+
+.headerSearch {
+    padding-left: 25%;
+    width: 30%;
+    background-color: #A7F3D0;
+    /* border: 1px solid #ddd; */
+    color: #10B981;
+    border-radius: 12px;
+    border: none;
+    font-size: 35px;
+}
+
+#navbar_user {
+    color: #1E3A8A;
+    font-size: 19px;
+    font-style: bold;
+    padding: 3px;
+}
+
+/* manejo de los queries */
+@media screen and (max-width: 1030px) {
+    header {
+        grid-template-rows: 50%, 50%;
+        /* border: 5px double black; */
+        height: auto;
+    }
+
+    .navbar {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .navbar ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header__container li {
+        margin-top: 8%;
+    }
+
+    .header__container a {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        grid-template-rows: 100%;
+    }
+
+    .navbar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header__container a {
+        font-size: 25px;
+    }
+
+    .headerSearch {
+        padding-left: 48%;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        grid-template-rows: 100%;
+        height: auto;
+    }
+
+    .navbar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .navbar ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .headerSearch {
+        padding-left: 48%;
+        width: 70%;
+    }
+}

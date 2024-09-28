@@ -1,0 +1,60 @@
+<!-- <p>new-incident works!</p> -->
+<main>
+    <section>
+        <div class="container">
+            <div class="form">
+                <form [formGroup]="formIncident">
+                    <p class="heading">{{title}}</p>
+                    <div class="inputContainer">
+                        <label class="" for="nameIncident">Nombre</label>
+                        <input formControlName="nameIncident" type="text" class="input" id="nameIncident" required
+                            placeholder="Incidencia">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="description">Descripción</label>
+                        <input formControlName="description" type="text" class="input" id="description" required
+                            placeholder="Descripción de la incidencia">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="incubationIncident">Periodo Incubación</label>
+                        <input formControlName="incubationIncident" type="text" class="input" id="incubationIncident"
+                            placeholder="Incubacion">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="recoveryIncident">Recuperación</label>
+                        <input formControlName="recoveryIncident" type="text" class="input" id="recoveryIncident"
+                            placeholder="Recuperación">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="sourceIncident">Fuente</label>
+                        <input formControlName="sourceIncident" type="text" class="input" id="sourceIncident"
+                            placeholder="Fuente de la información">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="imageIncident">Imagen</label>
+                        <input formControlName="imageIncident" type="text" class="input" id="imageIncident"
+                            placeholder="Imagen">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="casesIncident">Casos</label>
+                        <input formControlName="casesIncident" type="number" class="input" id="casesIncident"
+                            placeholder="Número de casos">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="" for="urlSourceIncident">Url fuente</label>
+                        <input formControlName="urlSourceIncident" type="text" class="input" id="urlSourceIncident"
+                            placeholder="url fuente información">
+                    </div>
+                    <!-- botones -->
+                    <div class="card_button">
+                        <p class="button">
+                            <button [disabled]="formIncident.invalid" [ngClass]="{'invalid': formIncident.invalid}"
+                                (click)="save()">{{btnText}}</button>
+                        </p>
+                        <button class="button_secundary" (click)="cancelar()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,45 @@
+<!-- <p>incident works! ingresa al componente incidencias</p> -->
+
+<main>
+    <div class="button_space">
+        <button *ngIf="isUserAdministrator" (click)="getNewIncident()" class="button">
+            <a>Nueva</a>
+        </button>
+    </div>
+    <section>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div *ngFor="let incident of incidents" class="card carousel-item">
+                    <img [src]="incident.imageIncident" alt="{{incident.nameIncident}}">
+                    <div class="card_right">
+                        <h3 class="card_title" (click)="viewFile(incident._id)">
+                            <a>{{incident.nameIncident}}</a>
+                        </h3>
+                        <div class="card_info">Descripción: {{incident.description}}</div>
+                        <div class="card_info">Periodo Incubación: {{incident.incubationIncident}}</div>
+                        <div class="card_info">Periodo Recuperación: {{incident.recoveryIncident}}</div>
+                        <div class="card_info">Casos: {{incident.casesIncident}}</div>
+                        <div class="card_info">Fuente: {{incident.sourceIncident}}, url {{incident.urlSourceIncident}}
+                        </div>
+                        <!-- botones -->
+                        <div class="card_button">
+                            <button *ngIf="isUserAdministrator" class="button"
+                                routerLink="/edit-incident/{{incident._id}}">Modificar</button>
+                            <button *ngIf="isUserAdministrator" class="button"
+                                (click)="deleteIncidentById(incident._id)">Eliminar</button>
+                        </div>
+                    </div>
+                    <!-- Control izquierdo y derecho del carrusel -->
+                    <button class="carousel-control prev" (click)="previousCard()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <div class="hoverEffect"></div>
+                    </button>
+                    <button class="carousel-control next" (click)="nextCard()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

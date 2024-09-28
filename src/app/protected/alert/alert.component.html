@@ -1,0 +1,31 @@
+<main>
+    <div>
+        <button (click)="getNewAlert()" class="new_button">
+            <a>Nuevo</a>
+        </button>
+    </div>
+    <section>
+        <div class="cards-container">
+            <div *ngFor="let alert of alerts" class="card playing">
+                <div class="image"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="infotop">
+                    <h3 (click)="viewAlert(alert._id)"><a>{{alert.description}}</a></h3>
+                    <div class="datos">Fecha: {{alert.dateAlert | date:"EEEE, d MMM y"}}</div>
+                    <p class="datos">notificacion SMS: {{alert.notificationSms}}</p>
+                    <p class="datos">notificacion Email: {{alert.notificationEmail}}</p>
+                    <!-- botones -->
+                    <div class="card_button">
+                        <button (click)="deleteAlertById(alert._id)" class="button_card">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</main>

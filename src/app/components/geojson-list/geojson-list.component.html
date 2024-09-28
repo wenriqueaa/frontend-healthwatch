@@ -1,0 +1,11 @@
+<p>geojson-list works!</p>
+<div>
+    <button (click)="searchInCollection('bancoSangre')">Banco Sangre</button>
+    <button (click)="searchInCollection('consultorioMedico')">Consultorio Médico</button>
+    <button (click)="searchInCollection('entidadFarmaceutica')">Entidad Farmacéutica</button>
+  </div>
+  <ul>
+    <li *ngFor="let feature of firstTenFeatures">
+      {{ feature.properties.BANCO_DE_S | json }} {{ feature.geometry.type | json }} {{ feature.geometry.coordinates | json }}
+    </li>
+  </ul>

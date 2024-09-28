@@ -1,0 +1,11 @@
+/* Ejemplo: Asegurar que el mapa ocupe todo el espacio disponible */
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  #map {
+    height: 400px; /* Puedes ajustar la altura según tus necesidades */
+    width: 100%;
+  }
+  

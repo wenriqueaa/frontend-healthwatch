@@ -1,0 +1,132 @@
+main {
+    padding: 80px 1px 1px 0px;
+    margin-bottom: 45px;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Altura de la pantalla completa */
+    height: 50vh;
+    display: grid;
+    grid-template-rows: 100%;
+}
+
+
+.container {
+    height: 45hv;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* slogan */
+.slogan_container {
+    display: grid;
+    grid-template-rows: 100%;
+    color: #F3F4F6;
+    position: relative;
+}
+
+.slogan {
+    position: sticky;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    /* alinea en el eje vertical */
+    align-self: center;
+}
+
+.slogan_h1 {
+    grid-row: 1 / 3;
+    padding-top: 15px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    font-style: italic;
+}
+
+.slogan_images {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    /* alinea en el eje horizontal */
+    justify-self: end;
+    /* alinea en el eje vertical */
+    align-self: center;
+}
+
+.slogan_images img {
+    height: 280px;
+}
+
+.message {
+    z-index: 800;
+    margin-top: 5px;
+    width: 100%;
+    height: 7vh;
+    background-color: #B1C6EA;
+    opacity: .9;
+
+    display: grid;
+    grid-template-rows: 100%;
+    color: #000;
+    position: absolute;
+    bottom: 0;
+}
+
+/* manejo de los queries */
+@media screen and (max-width: 900px) {
+    .slogan_container {
+        /* border: 5px double greenyellow; */
+        height: auto;
+    }
+
+    .slogan {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .slogan_images {
+        grid-template-columns: 1fr;
+    }
+
+    .slogan_h1 {
+        font-size: 50px;
+    }
+
+    @media screen and (max-width: 340px) {
+        .slogan {
+            grid-template-columns: 1fr;
+        }
+
+        .slogan_h1 {
+            font-size: 35px;
+        }
+    }
+}
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10;
+    margin: 5px;
+}
+
+.map-frame {
+    border: 2px solid black;
+    height: 100%;
+}
+
+#mapHome {
+    width: 400px;
+    height: 200px;
+}

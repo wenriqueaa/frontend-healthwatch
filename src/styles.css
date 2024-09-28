@@ -1,0 +1,39 @@
+/* @import "~leaflet/dist/leaflet.css"; */
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #A1BEE3;
+    font-family: 'Averia Sans Libre', sans-serif;
+
+    /* min-height: 30vh; */
+    margin: 0;
+    display: flex;
+    flex-direction: column;   
+    position: relative;    
+}
+
+/* altura de la pantalla */
+main {
+    height: 80vh;
+    min-height: 74vh;
+}
+
+/* generales */
+h2,
+h3 {
+    color: #F3F4F6;
+}
+
+/* manejo de los queries */
+@media screen and (max-width: 900px) {
+    main {
+        /* border: 5px double green; */
+        height: auto;
+    }
+}
+
