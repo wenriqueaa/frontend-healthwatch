@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AlertService {
-  private apiUrl: string = "http://localhost:3001/api"
+  private apiUrl: string = "http://54.165.41.169:3001/api"
   // private alertUser: string | null = sessionStorage.getItem('userId')
   constructor(private http: HttpClient) { }
 

@@ -11,7 +11,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   //ruta del backend para ejecutar los api rest
-  private apiUrl = "http://localhost:3001/api"
+  private apiUrl = "http://54.165.41.169:3001/api"
   private roleAdministration: boolean = false
   private userNameSubject = new BehaviorSubject<string | null>(null)
 
